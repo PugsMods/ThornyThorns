@@ -19,7 +19,7 @@ public class EventHandler {
     @SubscribeEvent
     public static void onDamage(LivingDamageEvent event){
         int thornsLevelTotal=0;
-        float damagetodeal = event.getAmount();
+        float dealableDamage = event.getAmount();
         if(sourceThorny(event.getSource())){
             for (ItemStack element : event.getEntity().getArmorSlots()) {
                 if(EnchantmentHelper.getItemEnchantmentLevel(Enchantments.THORNS,element) >= 1){
@@ -28,8 +28,8 @@ public class EventHandler {
             }
         }
         for(int step = 0;step <= thornsLevelTotal;step++){
-            if(damagetodeal > 0.5){
-                damagetodeal -= 0.5;
+            if(dealableDamage > 0.5){
+                dealableDamage -= 0.5;
             }
         }
     }
