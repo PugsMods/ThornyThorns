@@ -1,9 +1,14 @@
 package com.pugzarecute.thornythorns;
 
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+
+import java.util.Iterator;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE, modid = ThornyThorns.MODID)
 public class EventHandler {
@@ -14,7 +19,11 @@ public class EventHandler {
     @SubscribeEvent
     public static void onDamage(LivingDamageEvent event){
         if(sourceThorny(event.getSource())){
-            event.getEntity().getArmorSlots()
+            for (ItemStack element : event.getEntity().getArmorSlots()) {
+                if(EnchantmentHelper.getItemEnchantmentLevel(Enchantments.THORNS,element) >= 1){
+                    //TODO; LOGIC
+                }
+            }
         }
         event.setCanceled(true);
     }
