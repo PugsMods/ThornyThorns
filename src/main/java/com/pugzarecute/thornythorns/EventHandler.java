@@ -29,5 +29,6 @@ public class EventHandler {
                 dealableDamage -= 0.5;
             }
         }
+        event.setAmount(dealableDamage);
     }
 }
