@@ -13,8 +13,7 @@ import java.util.Iterator;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE, modid = ThornyThorns.MODID)
 public class EventHandler {
     public static boolean sourceThorny(DamageSource in){
-        if(in == DamageSource.SWEET_BERRY_BUSH||in==DamageSource.CACTUS) return true;
-        return false;
+        return in == DamageSource.SWEET_BERRY_BUSH || in == DamageSource.CACTUS;
     }
     @SubscribeEvent
     public static void onDamage(LivingDamageEvent event){
