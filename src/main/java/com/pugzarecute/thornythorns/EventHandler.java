@@ -18,16 +18,16 @@ public class EventHandler {
     }
     @SubscribeEvent
     public static void onDamage(LivingDamageEvent event){
-        int damagereductioncounter=0;
+        int thornsLevelTotal=0;
         float damagetodeal = event.getAmount();
         if(sourceThorny(event.getSource())){
             for (ItemStack element : event.getEntity().getArmorSlots()) {
                 if(EnchantmentHelper.getItemEnchantmentLevel(Enchantments.THORNS,element) >= 1){
-                        damagereductioncounter += EnchantmentHelper.getItemEnchantmentLevel(Enchantments.THORNS,element);
+                        thornsLevelTotal += EnchantmentHelper.getItemEnchantmentLevel(Enchantments.THORNS,element);
                 }
             }
         }
-        for(int step = 0;step <= damagereductioncounter;step++){
+        for(int step = 0;step <= thornsLevelTotal;step++){
             if(damagetodeal > 0.5){
                 damagetodeal -= 0.5;
             }
