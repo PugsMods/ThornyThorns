@@ -28,7 +28,9 @@ public class EventHandler {
             }
         }
         for(int step = 0;step <= damagereductioncounter;step++){
-
+            if(damagetodeal > 0.5){
+                damagetodeal -= 0.5
+            }
         }
         event.setCanceled(true);
     }
