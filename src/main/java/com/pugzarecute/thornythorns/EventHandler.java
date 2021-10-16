@@ -32,6 +32,5 @@ public class EventHandler {
                 damagetodeal -= 0.5;
             }
         }
-        event.setCanceled(true);
     }
 }
