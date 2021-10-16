@@ -28,7 +28,7 @@ public class EventHandler {
             }
         }
         for(int step = 0;step <= thornsLevelTotal;step++){
-            if(dealableDamage > 0.5){
+            if(dealableDamage >= 0.5){
                 dealableDamage -= 0.5;
             }
         }
