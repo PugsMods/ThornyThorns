@@ -10,22 +10,23 @@ import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE, modid = ThornyThorns.MODID)
 public class EventHandler {
-    public static boolean sourceThorny(DamageSource in){
+    public static boolean sourceThorny(DamageSource in) {
         return in == DamageSource.SWEET_BERRY_BUSH || in == DamageSource.CACTUS;
     }
+
     @SubscribeEvent
-    public static void onDamage(LivingDamageEvent event){
-        int thornsLevelTotal=0;
+    public static void onDamage(LivingDamageEvent event) {
+        int thornsLevelTotal = 0;
         float dealableDamage = event.getAmount();
-        if(sourceThorny(event.getSource())){
+        if (sourceThorny(event.getSource())) {
             for (ItemStack element : event.getEntity().getArmorSlots()) {
-                if(EnchantmentHelper.getItemEnchantmentLevel(Enchantments.THORNS,element) >= 1){
-                        thornsLevelTotal += EnchantmentHelper.getItemEnchantmentLevel(Enchantments.THORNS,element);
+                if (EnchantmentHelper.getItemEnchantmentLevel(Enchantments.THORNS, element) >= 1) {
+                    thornsLevelTotal += EnchantmentHelper.getItemEnchantmentLevel(Enchantments.THORNS, element);
                 }
             }
         }
-        for(int step = 0;step <= thornsLevelTotal;step++){
-            if(dealableDamage >= 0.5){
+        for (int step = 0; step <= thornsLevelTotal; step++) {
+            if (dealableDamage >= 0.5) {
                 dealableDamage -= 0.5;
             }
         }
