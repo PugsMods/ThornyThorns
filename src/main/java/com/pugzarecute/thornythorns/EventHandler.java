@@ -14,7 +14,7 @@ import java.util.Iterator;
 public class EventHandler {
     public static boolean sourceThorny(DamageSource in){
         if(in == DamageSource.SWEET_BERRY_BUSH||in==DamageSource.CACTUS) return true;
-        return false
+        return false;
     }
     @SubscribeEvent
     public static void onDamage(LivingDamageEvent event){
