@@ -21,7 +21,9 @@ public class EventHandler {
         if(sourceThorny(event.getSource())){
             for (ItemStack element : event.getEntity().getArmorSlots()) {
                 if(EnchantmentHelper.getItemEnchantmentLevel(Enchantments.THORNS,element) >= 1){
-                    //TODO; LOGIC
+                    if(event.getAmount()>= 0.5){
+
+                    }
                 }
             }
         }
