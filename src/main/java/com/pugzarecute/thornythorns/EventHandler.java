@@ -18,11 +18,12 @@ public class EventHandler {
     }
     @SubscribeEvent
     public static void onDamage(LivingDamageEvent event){
+        private int damagereductioncounter=0;
         if(sourceThorny(event.getSource())){
             for (ItemStack element : event.getEntity().getArmorSlots()) {
                 if(EnchantmentHelper.getItemEnchantmentLevel(Enchantments.THORNS,element) >= 1){
                     if(event.getAmount()>= 0.5){
-
+                        damagereductioncounter += EnchantmentHelper.getItemEnchantmentLevel(Enchantments.THORNS,element)
                     }
                 }
             }
