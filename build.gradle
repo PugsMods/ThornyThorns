@@ -6,7 +6,6 @@ buildscript {
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
-        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
     }
 }
 
@@ -23,13 +22,11 @@ java {
 
 minecraft {
     mappings channel: 'official', version: '1.17.1'
-    // These can be tweaked, removed, or duplicated as needed.
     runs {
         client {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
-            arg "-mixin.config=thornythorns.mixins.json"
             mods {
                 thornythorns {
                     source sourceSets.main
@@ -41,7 +38,6 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
-            arg "-mixin.config=thornythorns.mixins.json"
 
             mods {
                 thornythorns {
@@ -65,9 +61,6 @@ minecraft {
     }
 }
 
-mixin {
-    add sourceSets.main, "thornythorns.refmap.json"
-}
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
@@ -76,7 +69,6 @@ repositories {
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.16.5-37.0.95'
-    annotationProcessor 'org.spongepowered:mixin:0.8:processor'
 }
 
 jar {
@@ -88,7 +80,6 @@ jar {
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Vendor"   : "PugzAreCute",
-                "MixinConfigs"            : "thornythorns.mixins.json",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
