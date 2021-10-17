@@ -22,7 +22,7 @@ java {
 }
 
 minecraft {
-    mappings channel: 'official', version: '1.16.5'
+    mappings channel: 'official', version: '1.17.1'
     // These can be tweaked, removed, or duplicated as needed.
     runs {
         client {
@@ -75,7 +75,7 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.5-36.2.0'
+    minecraft 'net.minecraftforge:forge:1.16.5-37.0.95'
     annotationProcessor 'org.spongepowered:mixin:0.8:processor'
 }
 
