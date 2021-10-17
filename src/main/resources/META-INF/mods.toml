@@ -1,15 +1,14 @@
 modLoader = "javafml"
 loaderVersion = "[36,)"
 license = "GNU LGPL 3.0"
-#issueTrackerURL="http://my.issue.tracker/"
+issueTrackerURL="http://my.issue.tracker/"
 [[mods]]
 modId = "thornythorns"
-version = "${file.jarVersion}"
+version = "1.0.0"
 displayName = "ThornyThorns"
 updateJSONURL = "https://to-be-filled.io/url.json"
-#displayURL="http://example.com/"
-#logoFile="thornythorns.png"
-#credits="Thanks for this example mod goes to Java"
+displayURL="http://example.com/"
+logoFile="thornythorns.png"
 authors = "PugzAreCute"
 description = '''
 Make thorns reduce damage from throny sources
