@@ -11,7 +11,7 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE, modid = ThornyThorns.MODID)
 public class EventHandler {
     public static boolean sourceThorny(DamageSource in) {
-        return in == DamageSource.SWEET_BERRY_BUSH || in == DamageSource.CACTUS;
+        return in == DamageSource.SWEET_BERRY_BUSH || in == DamageSource.CACTUS || in == DamageSource.STALAGMITE;
     }
 
     @SubscribeEvent
