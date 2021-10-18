@@ -16,7 +16,7 @@ Make thorns reduce damage from throny sources
 [[dependencies.thornythorns]]
 modId = "forge"
 mandatory = true
-versionRange = "[36,)"
+versionRange = "[37,)"
 ordering = "NONE"
 side = "BOTH"
 [[dependencies.thornythorns]]
