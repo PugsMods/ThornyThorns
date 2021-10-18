@@ -16,7 +16,7 @@ version = '1.0.0'
 
 java {
     archivesBaseName = 'thornythorns'
-    toolchain.languageVersion = JavaLanguageVersion.of(8)
+    toolchain.languageVersion = JavaLanguageVersion.of(16)
 }
 
 minecraft {
